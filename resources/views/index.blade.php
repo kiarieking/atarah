@@ -23,7 +23,7 @@
     
     <!-- custom css -->
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
-
+    <link rel="icon" href="{{asset('img/logo.jpg')}}" type="image/png">
     <title>Atarah Solutions</title>
 </head>
 <body>

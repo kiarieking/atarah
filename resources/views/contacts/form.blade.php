@@ -1,7 +1,7 @@
 <div class="contact-left">
     <h2>Leave us a message</h2>
     @if (Session::has('flash_message'))
-        <p>your message has been succesfuly sent.</p>
+        <p class="success">your message has been succesfuly sent.</p>
     @endif    
     <form method="post" action="{{route('contact')}}">
         @csrf
