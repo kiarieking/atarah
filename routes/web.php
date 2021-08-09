@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactFormController;
 
 /*
@@ -22,3 +23,4 @@ Route::get('/', function () {
 Route::get('/home',[HomeController::class, 'index'])->name('home');
 
 Route::post('contact', [ContactFormController::class, 'store'])->name('contact');
+Route::get('admin', [AdminController::class, 'index'])->name('admin');
