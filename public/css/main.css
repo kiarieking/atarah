@@ -311,8 +311,8 @@ section{
 
 /* testimonials */
 .testimonial{
-    background-image: linear-gradient(rgba(0,0,155,0.8)
-    ,rgba(0,0,155,0.8)), url("../img/testimonial-4.jpg");
+    background-image: linear-gradient(rgba(4,19,153,0.8)
+    ,rgba(4,19,153,0.8)), url("../img/testimonial-4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -355,8 +355,9 @@ section{
     margin-top: 0.7rem;
     display: block;
     font-size: 1.1rem;
-    color:var(--secondary);
-    font-weight: 500;
+    color:#fff;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 900;
 }
 
 /* contacts */
@@ -376,10 +377,10 @@ section{
 .contact-left form textarea{
     width: 100%;
     font-size: 1.1rem;
-    margin: 0.2rem 0;
+    margin: 0.8rem 0;
     padding: 0.8rem 0.6rem;
     border: none;
-    border-bottom: 1.5px solid #fff;
+    border-bottom: 1.5px solid black;
     outline:0;
 }
 .contact-left form input::placeholder,
@@ -391,6 +392,7 @@ section{
 .contact-left form input:focus,
 .contact-left form textarea:focus{
     border-color: var(--night-rider);
+    /* border: 1.5px solid var(--mount-meadow); */
 }
 .submit-btn{
     margin: 1rem 0;

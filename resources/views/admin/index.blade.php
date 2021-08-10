@@ -37,42 +37,42 @@
                     <i class='bx bxs-user' ></i>
                     <span class="links-name">User</span>
                 </a>
-                <span class="tooltip">user</span>
+                <span class="tooltip">Users</span>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('services')}}">
                     <i class='bx bxs-folder-open' ></i>
                     <span class="links-name">Service</span>
                 </a>
-                <span class="tooltip">Services crud operation</span>
+                <span class="tooltip">Services</span>
             </li>
             <li>
                 <a href="">
                     <i class='bx bxs-chart'></i>
                     <span class="links-name">Models</span>
                 </a>
-                <span class="tooltip">Add or remove Models</span>
+                <span class="tooltip">Models</span>
             </li>
             <li>
                 <a href="">
                     <i class='bx bx-message' ></i>
                     <span class="links-name">Testimony</span>
                 </a>
-                <span class="tooltip">Testimony addition</span>
+                <span class="tooltip">Testimony</span>
             </li>
             <li>
                 <a href="">
                     <i class='bx bxs-happy'></i>
                     <span class="links-name">Client</span>
                 </a>
-                <span class="tooltip">Add clients</span>
+                <span class="tooltip">Clients</span>
             </li>
             <li>
                 <a href="">
                     <i class='bx bx-conversation' ></i>
                     <span class="links-name">Contacts</span>
                 </a>
-                <span class="tooltip">Emails and messages from users</span>
+                <span class="tooltip">Contacts</span>
             </li>
         </ul>
         <div class="profile_content">
@@ -89,7 +89,7 @@
         </div>
     </div>
     <div class="home_content">
-        <div class="text">Admin Landing Page</div>
+        @yield('content')
     </div>
     <script src="{{asset('js/admin.js')}}"></script>
 </body>
