@@ -26,3 +26,4 @@ Route::get('/home',[HomeController::class, 'index'])->name('home');
 Route::post('contact', [ContactFormController::class, 'store'])->name('contact');
 Route::get('admin', [AdminController::class, 'index'])->name('admin');
 Route::get('services', [ServicesController::class, 'index'])->name('services');
+Route::post('new_service', [ServicesController::class, 'newService'])->name('new_service');

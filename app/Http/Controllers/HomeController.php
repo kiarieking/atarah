@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Services;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('index');
+        $services = Services::skip(0)->take(3)->get();
+        return view('index',compact('services'));
     }
 }
