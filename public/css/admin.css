@@ -254,6 +254,17 @@ body{
     left:240px;
 }
 
+/* edit and delete icons */
+.crud-row{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.detail-item .crud-row .crud-item i{
+    
+    
+}
+
 /* admin service view */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
@@ -297,7 +308,7 @@ body{
   font-size: 14px;
   border-radius: 0;
   line-height: 22px;
-  background-color: rgb(204, 204, 207);
+  background-color: rgb(239, 239, 245);
   padding: 13px 13px 13px 13px;
   margin-bottom: 10px;
   width:100%;

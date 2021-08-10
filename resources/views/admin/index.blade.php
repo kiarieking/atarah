@@ -57,7 +57,7 @@
                 <span class="tooltip">Services</span>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('models')}}">
                     <i class='bx bxs-chart'></i>
                     <span class="links-name">Models</span>
                 </a>
