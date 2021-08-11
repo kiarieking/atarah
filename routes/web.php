@@ -24,7 +24,6 @@ Route::get('/', function () {
 
 Route::get('/home',[HomeController::class, 'index'])->name('home');
 
-Route::post('contact', [ContactFormController::class, 'store'])->name('contact');
 Route::get('admin', [AdminController::class, 'index'])->name('admin');
 
 // services
@@ -37,4 +36,9 @@ Route::delete('delete_service/{id}', [ServicesController::class, 'deleteService'
 // models
 Route::get('models', [ModelsController::class, 'index'])->name('models');
 Route::post('new_model', [ModelsController::class, 'newModel'])->name('new_model');
+
+// contacts
+Route::get('admin_contact',[ContactFormController::class, 'index'])->name('admin_contact');
+Route::post('contact', [ContactFormController::class, 'store'])->name('contact');
+Route::get('reply_form', [ContactFormController::class, 'replyForm'])->name('reply_form');
 

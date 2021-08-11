@@ -78,7 +78,7 @@
                 <span class="tooltip">Clients</span>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('admin_contact')}}">
                     <i class='bx bx-conversation' ></i>
                     <span class="links-name">Contacts</span>
                 </a>
