@@ -36,3 +36,5 @@ Route::delete('delete_service/{id}', [ServicesController::class, 'deleteService'
 
 // models
 Route::get('models', [ModelsController::class, 'index'])->name('models');
+Route::post('new_model', [ModelsController::class, 'newModel'])->name('new_model');
+

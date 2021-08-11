@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AtarahMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -15,26 +16,21 @@ class ContactFormController extends Controller
             'message' => 'required'
         ]);
         
-        $data=array("name"=>$request->name, 'body'=>$request->message, 'msg'=>$request->message);
-        Mail::send('emails.admin-message',$data, 
-        function ($mail) use($request) {
-            $mail->from($request->email, $request->name);
-          
-            $mail->to('kingara49@gmail.com',)->subject('Atarah Client Querry');
-          
-        });
+        $email = $request -> email;
+        $sender = 'kingara49@gmail.com';
 
-        $to_name = "Kelvin kiarie";
-        $to_email = $request->email;
-        $data = array("name"=>$request->name, "body" => "Thank you for contacting Atarah Solutions. We'll get
-        back to you shortly.");
+        $maildata = [
+            'title' => 'Atarah Solutions Customer Service',
+            'url' => 'http://127.0.0.1:8000/home'
+        ];
 
-        Mail::send("emails.contact-message", $data, function($message) use ($to_name, $to_email) {
-            $message->to($to_email, $to_name)
-            ->subject('Thank you for your message');
-            $message->from("kingara49@gmail.com","Atarah Solutions");
-        });
+        Mail::to($email) -> send(new AtarahMail($maildata));
+
+        
+
 
         return redirect()->back()->with('flash_message','We have received your message');
+
+
     }
 }
