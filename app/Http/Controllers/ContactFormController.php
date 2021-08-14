@@ -80,6 +80,6 @@ class ContactFormController extends Controller
         ];
 
         Mail::to($email) -> send(new AdminResponseMail($maildata));
-        return redirect()->route('admin_contact');
+        return redirect()->route('admin_contact')->with('flash_message','your email has been sent');
     }
 }

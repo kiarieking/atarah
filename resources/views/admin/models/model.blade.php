@@ -7,6 +7,8 @@
       <th><h1>Model Name</h1></th>
       <th><h1>icon</h1></th>
       <th><h1>Description</h1></th>
+      <th><h1>Action</h1></th>
+      <th><h1>Action</h1></th>
       
     </tr>
   </thead>

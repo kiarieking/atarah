@@ -1,11 +1,16 @@
 @extends('admin.index')
 @section('content')
+@if(Session::has('flash_message'))
+  <p class="success">Your email has been sent.</p>
+@endif  
 <table class="container">
   <thead>
     <tr>
       <th><h1>Name</h1></th>
       <th><h1>Email</h1></th>
       <th><h1>Message</h1></th>
+      <th><h1>Action</h1></th>
+      <th><h1>Action</h1></th>
       
     </tr>
   </thead>

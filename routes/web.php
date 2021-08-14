@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ModelsController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\TestimonyController;
 use App\Http\Controllers\ContactFormController;
 
 /*
@@ -48,3 +49,6 @@ Route::post('contact', [ContactFormController::class, 'store'])->name('contact')
 Route::get('reply_form/{id}', [ContactFormController::class, 'replyForm'])->name('reply_form');
 Route::delete('delete_message/{id}', [ContactFormController::class, 'deleteMessage'])->name('delete_message');
 Route::post('admin_response', [ContactFormController::class, 'adminResponse'])->name('admin_response');
+
+// testimonies
+Route::get('testimonies', [TestimonyController::class, 'getTestimonies'])->name('testimonies');

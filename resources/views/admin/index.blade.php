@@ -64,7 +64,7 @@
                 <span class="tooltip">Models</span>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('testimonies')}}">
                     <i class='bx bx-message' ></i>
                     <span class="links-name">Testimony</span>
                 </a>

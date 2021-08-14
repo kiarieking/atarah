@@ -415,7 +415,11 @@ section{
     color: red;
 }
 .success{
+    width: 300px;
     background: greenyellow;
+    color:black;
+    text-align: center;
+    float: right;
 }
 
 
