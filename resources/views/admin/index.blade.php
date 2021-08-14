@@ -99,6 +99,9 @@
         </div>
     </div>
     <div class="home_content">
+        <!-- <div class="top-bar">
+            kk
+        </div> -->
         @yield('content')
     </div>
     <script src="{{asset('js/admin.js')}}"></script>

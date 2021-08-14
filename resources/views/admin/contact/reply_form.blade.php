@@ -1,17 +1,17 @@
 @extends('admin.index')
 @section('content')
 <div class="contact-left" id="reply-form">
-    <h2>Leave us a message</h2>
+    <h2>Respond to client</h2>
     @if (Session::has('flash_message'))
         <p class="success">your message has been succesfuly sent.</p>
     @endif    
-    <form method="post" action="{{route('contact')}}">
+    <form method="post" action="{{route('admin_response')}}">
         @csrf
-        <input type="text" name="name" class="form-control" placeholder="Name">
+        <input type="text" name="name" value="{{$message->name}}" class="form-control" placeholder="Name">
         @if ($errors->has('name'))
             <small class="form-text invalid-feedback text-danger">{{$errors->first('name')}}</small></br>
         @endif    
-        <input type="text" name="email" class="form-control " placeholder="Email">
+        <input type="text" name="email" value="{{$message->email}}" class="form-control " placeholder="Email">
         @if ($errors->has('email'))
             <small class="form-text invalid-feedback text-danger">{{$errors->first('email')}}</small></br>
         @endif 

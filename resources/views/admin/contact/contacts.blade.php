@@ -15,9 +15,11 @@
       <td>{{$message->name}}</td>
       <td>{{$message->email}}</td>
       <td>{{$message->msg}}</td> 
-      <th><a href="{{route('reply_form')}}" ><button class="btn-trans" id="btn_edit">respond</button></a></th>
+      <th><a href="{{route('reply_form',$message->id)}}" ><button class="btn-trans" id="btn_edit">respond</button></a></th>
       <th>
-        <form>
+        <form action="{{route('delete_message',$message->id)}}" method="POST">
+          @csrf
+          @method('delete')
           <button class="btn-white" id="btn_delete">delete</button>
         </form>
       </th>

@@ -1,146 +1,32 @@
 @extends('admin.index')
 @section('content')
-<div class="models-item">
-    <span><i class="fas fa-scroll"></i></span>
-    <div>
-        <h3>DEFINE</h3>
-        <p >This is our proposal stage where we define and clarify issues in our
-          terms to ensure the client has understood. We also include solutions and suggestions to
-           the needs deduced during deep dive.</p>
-           <div class="crud-row">
-            <div class="crud-item">
-              <a href="">
-                <span><i class="fas fa-user-edit"></i></span>
-              </a>                 
-            </div>
-            <div class="crud-item">
-              <form action="" method="POST">
-                @csrf
-                @method('delete')
-                <button type="submit">
-                  <span><i class="fas fa-trash-alt"></i></span>
-                </button>
-              </form>
-              
-            </div>
-          </div>
-    </div>
-</div>
-<div class="models-item">
-  <span><i class="fas fa-drafting-compass"></i> </span>
-  <div>
-      <h3>DEEP DIVE</h3>
-      <p >This is our requirements gathering stage. We engage with the client
-          in a deep analysis to better understand what they require.</p>
-          <div class="crud-row">
-            <div class="crud-item">
-              <a href="">
-                <span><i class="fas fa-user-edit"></i></span>
-              </a>                 
-            </div>
-            <div class="crud-item">
-              <form action="" method="POST">
-                @csrf
-                @method('delete')
-                <button type="submit">
-                  <span><i class="fas fa-trash-alt"></i></span>
-                </button>
-              </form>
-              
-            </div>
-          </div>
-  </div>
-  </div> 
-  <div class="models-item">
-  <span><i class="fas fa-hammer"></i></i></span>
-  <div>
-      <h3>DESIGN</h3>
-      <p >We develop a customized scope of work and a list of activities hinged
-          on the identified need.</p>
-          <div class="crud-row">
-            <div class="crud-item">
-              <a href="">
-                <span><i class="fas fa-user-edit"></i></span>
-              </a>                 
-            </div>
-            <div class="crud-item">
-              <form action="" method="POST">
-                @csrf
-                @method('delete')
-                <button type="submit">
-                  <span><i class="fas fa-trash-alt"></i></span>
-                </button>
-              </form>
-              
-            </div>
-          </div>
-  </div>
-</div> 
-<div class="models-item">
-  <span><i class="fas fa-truck"></i></span>
-  <div>
-      <h3>DELIVER</h3>
-      <p >We implement and measure results in this stage</p>
-      <div class="crud-row">
-        <div class="crud-item">
-          <a href="">
-            <span><i class="fas fa-user-edit"></i></span>
-          </a>                 
-        </div>
-        <div class="crud-item">
-          <form action="" method="POST">
-            @csrf
-            @method('delete')
-            <button type="submit">
-              <span><i class="fas fa-trash-alt"></i></span>
-            </button>
-          </form>
-          
-        </div>
-      </div>
-  </div>
-</div> 
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div id="form-main">
-                <div id="form-div">
-                    <h2 class="mb-3 form-head">Add a Model</h2>
-                  <form class="form" id="form1" action="{{route('new_model')}}" method="POST">
-                    @csrf
-                    <p class="name">
-                      <input name="title" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" 
-                      placeholder="title" id="name" />
-                    </p>
-                    
-                    <p class="email">
-                      <input list="icon" name="icon" class="validate[required,custom[email]] feedback-input" id="email" 
-                      placeholder="icon" />
-                      <datalist id="icon">
-                        <option value="fas fa-address-book">
-                        <option value="fas fa-users">
-                        <option value="far fa-handshake">
-                        <option value="fas fa-briefcase">
-                        <option value="fas fa-building">
-                      </datalist>
-                    </p>
-                    
-                    <p class="text">
-                        <textarea name="description" class="validate[required,length[6,300]] feedback-input" id="comment" 
-                        placeholder="description"></textarea>
-                      </p>
-                   
-                    
-                    
-                    <div class="submit">
-                      <input type="submit" value="Upload" id="button-blue"/>
-                      <div class="ease"></div>
-                    </div>
-                  </form>
-                </div>
-        </div>
-    </div>
-</div>
-
+<th><a href="{{route('create_model')}}" ><button class="btn-trans" id="btn_edit">create new model</button></a></th>
+<table class="container">
+  <thead>
+    <tr>
+      <th><h1>Model Name</h1></th>
+      <th><h1>icon</h1></th>
+      <th><h1>Description</h1></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      @foreach ($models as $model)
+    <tr>
+      <td>{{$model->header}}</td>
+      <td>{{$model->icon}}</td>
+      <td>{{$model->description}}</td> 
+      <th><a href="{{route('edit_model_form',$model->id)}}" ><button class="btn-trans" id="btn_edit">Edit</button></a></th>
+      <th>
+        <form action="{{route('delete_model',$model->id)}}" method="POST">
+          @csrf
+          @method('delete')
+          <button class="btn-white" id="btn_delete">Delete</button>
+        </form>
+      </th>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+ 
 @endsection

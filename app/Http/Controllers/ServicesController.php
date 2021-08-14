@@ -13,6 +13,11 @@ class ServicesController extends Controller
         return view('admin.services.services', compact('services'));
     }
 
+    public function newServiceForm()
+    {
+        return view('admin.services.create_service');
+    }
+
     public function newService(Request $request)
     {
         $this->validate($request, [

@@ -104,16 +104,16 @@ body{
     line-height: 50px;
 }
 .sidebar ul li .tooltip{
-    position: absolute;
+    position:sticky;
     left: 122px;
     top: 0;
-    transform: translateY(-50%);
+    transform: translateY(-300%);
     border-radius: 6px;
     height: 35px;
-    width: 125px;
+    width: 85px;
     background: #fff;
     line-height: 35px;
-    text-align: center;
+    text-align: left;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     transition: 0s;
     opacity: 0;
@@ -236,8 +236,18 @@ body{
 .sidebar.active .profile #log_out{
     left:88%
 }
+
+input .is-invalid{
+  border-color: red;
+}
+.invalid-feedback{
+  color: red;
+  font-size: 10px;
+  font-weight: bolder;
+}
 .home_content{
   position: absolute;
+  margin: 2rem;
   height: 100%;
   width: calc(100%-78px);
   left: 78px; 
@@ -247,7 +257,6 @@ body{
     font-size: 25px;
     font-weight: 500;
     color:#0e246e;
-    margin: 12px;
 }
 .sidebar.active ~ .home_content{
     width: calc(100%-240px);
@@ -260,9 +269,12 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-.detail-item .crud-row .crud-item i{
-    
-    
+.top-bar{
+  width:40rem;
+  background: #000;
+  height: 2rem;
+  margin-left:2rem;
+  margin-top: 2rem;
 }
 
 /* admin service view */
@@ -419,7 +431,7 @@ input:focus, textarea:focus {
    font-weight: 300;
    line-height: 1.42em;
    color:#A7A1AE;
-   background-color:#1F2739;
+   background-color:#637bb3;
  }
  
  h1 {
@@ -469,7 +481,7 @@ input:focus, textarea:focus {
      text-align: center;
      overflow: hidden;
      width: 100%;
-     margin: 30px;
+     
    display: table;
    padding: 0 0 8em 0;
  }
@@ -540,6 +552,11 @@ input:focus, textarea:focus {
   padding: 10px;
   color: red;
 }
+
+#reply-form{
+  margin-left: 100px;
+}
+
 
  @media (max-width: 800px) {
  .container td:nth-child(4),

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Message;
 use App\Mail\AtarahMail;
 use Illuminate\Http\Request;
+use App\Mail\AdminResponseMail;
 use Illuminate\Support\Facades\Mail;
 
 class ContactFormController extends Controller
@@ -25,7 +26,6 @@ class ContactFormController extends Controller
         
         // send an email to user
         $email = $request -> email;
-        $sender = 'kingara49@gmail.com';
 
         $maildata = [
             'title' => 'Atarah Solutions Customer Service',
@@ -47,8 +47,39 @@ class ContactFormController extends Controller
 
     }
 
-    public function replyForm()
+    public function replyForm($id)
     {
-        return view('admin.contact.reply_form');
+        $message = Message::findOrFail($id);
+        return view('admin.contact.reply_form', compact('message'));
+    }
+
+    public function deleteMessage($id)
+    {
+        $message = Message::findOrFail($id);
+        $message->delete();
+
+        return redirect()->route('admin_contact');
+    }
+
+    public function adminResponse(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+
+        $email = $request-> email;
+        $message = $request->message;
+        
+        $maildata = [
+            'title' => 'Response to your query',
+            'url' => 'http://127.0.0.1:8000/home',
+            'name' => $request->name,
+            'message' => $message
+        ];
+
+        Mail::to($email) -> send(new AdminResponseMail($maildata));
+        return redirect()->route('admin_contact');
     }
 }
