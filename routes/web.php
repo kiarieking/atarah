@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ModelsController;
+use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TestimonyController;
 use App\Http\Controllers\ContactFormController;
@@ -57,3 +58,6 @@ Route::post('new_testimony', [TestimonyController::class, 'newTestimony'])->name
 Route::get('edit_testimonyform/{id}', [TestimonyController::class, 'editTestimony'])->name('edit_testimonyform');
 Route::put('save_testimonychange/{id}', [TestimonyController::class, 'saveTestimonyChange'])->name('save_testimonychange');
 Route::delete('delete_testimony/{id}', [TestimonyController::class, 'deleteTestimony'])->name('delete_testimony');
+
+//clients
+Route::get('clients', [ClientsController::class, 'getClients'])->name('clients');

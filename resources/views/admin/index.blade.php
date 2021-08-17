@@ -71,7 +71,7 @@
                 <span class="tooltip">Testimony</span>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('clients')}}">
                     <i class='bx bxs-happy'></i>
                     <span class="links-name">Client</span>
                 </a>
