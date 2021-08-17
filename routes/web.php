@@ -52,3 +52,5 @@ Route::post('admin_response', [ContactFormController::class, 'adminResponse'])->
 
 // testimonies
 Route::get('testimonies', [TestimonyController::class, 'getTestimonies'])->name('testimonies');
+Route::get('new_testimonyform', [TestimonyController::class, 'newTestimonyForm'])->name('new_testimonyform');
+Route::post('new_testimony', [TestimonyController::class, 'newTestimony'])->name('new_testimony');
