@@ -61,3 +61,8 @@ Route::delete('delete_testimony/{id}', [TestimonyController::class, 'deleteTesti
 
 //clients
 Route::get('clients', [ClientsController::class, 'getClients'])->name('clients');
+Route::get('add_newclientform', [ClientsController::class, 'newClientForm'])->name('add_newclientform');
+Route::post('new_client', [ClientsController::class, 'newClient'])->name('new_client');
+Route::get('edit_clientform/{id}', [ClientsController::class, 'editClientForm'])->name('edit_clientform');
+Route::put('edit_client/{id}', [ClientsController::class, 'editClient'])->name('edit_client');
+Route::delete('delete_client/{id}', [ClientsController::class, 'deleteClient'])->name('delete_client');
