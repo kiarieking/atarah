@@ -54,3 +54,6 @@ Route::post('admin_response', [ContactFormController::class, 'adminResponse'])->
 Route::get('testimonies', [TestimonyController::class, 'getTestimonies'])->name('testimonies');
 Route::get('new_testimonyform', [TestimonyController::class, 'newTestimonyForm'])->name('new_testimonyform');
 Route::post('new_testimony', [TestimonyController::class, 'newTestimony'])->name('new_testimony');
+Route::get('edit_testimonyform/{id}', [TestimonyController::class, 'editTestimony'])->name('edit_testimonyform');
+Route::put('save_testimonychange/{id}', [TestimonyController::class, 'saveTestimonyChange'])->name('save_testimonychange');
+Route::delete('delete_testimony/{id}', [TestimonyController::class, 'deleteTestimony'])->name('delete_testimony');

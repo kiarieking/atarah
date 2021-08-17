@@ -38,7 +38,41 @@ class TestimonyController extends Controller
         $testimony -> image = $newImageName;
         $testimony->save();
         return redirect()->route('testimonies');
-
         
+    }
+
+    public function editTestimony($id)
+    {
+        $testimony = Testimony::findOrFail($id);
+        return view('admin.testimony.edit_testimony',\compact('testimony'));
+    }
+
+    public function saveTestimonyChange(Request $request,$id)
+    {
+        $this -> validate($request, [
+            'name' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg|max:10092',
+            'testimony' => 'required'
+        ]);
+
+        $testimony = Testimony::findOrFail($id);
+
+        $testimony -> name = $request -> name;
+        $testimony -> testimony = $request -> testimony;
+         
+        $editImageName = time().'-'.$request->name.'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $editImageName);
+
+        $testimony->image = $editImageName;
+        $testimony->save();
+        return redirect()->route('testimonies');
+    }
+
+    public function deleteTestimony($id)
+    {
+        $testimony = Testimony::findOrFail($id);
+        $testimony -> delete();
+
+        return redirect()->route('testimonies');
     }
 }

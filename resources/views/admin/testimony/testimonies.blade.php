@@ -18,18 +18,19 @@
       <td>{{$testimony->name}}</td>
       <td>{{$testimony->testimony}}</td>
       <td>{{$testimony->image}}</td> 
-      <th><a href="" ><button class="btn-trans" id="btn_edit">Edit</button></a></th>
+      <th><a href="{{route('edit_testimonyform',$testimony->id)}}" ><button class="btn-trans" id="btn_edit">Edit</button></a></th>
       <th>
-        <form action="" method="POST" >
+        <form action="{{route('delete_testimony',$testimony->id)}}" method="POST" >
           @csrf
           @method('delete')
           <button class="btn-white" id="btn_delete">Delete</button>
         </form>
       </th>
     </tr>
+    
     @endforeach
   </tbody>
- <img src="{{$testimony->img}}" alt="testimony img">
+
 
 </table>
 @endsection
