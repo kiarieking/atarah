@@ -50,6 +50,13 @@
                 <span class="tooltip">Users</span>
             </li>
             <li>
+                <a href="{{route('headers')}}">
+                    <i class='bx bx-heading'></i>
+                    <span class="links-name">Header</span>
+                </a>
+                <span class="tooltip">Header</span>
+            </li>
+            <li>
                 <a href="{{route('services')}}">
                     <i class='bx bxs-folder-open' ></i>
                     <span class="links-name">Service</span>

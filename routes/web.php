@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\ModelsController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ServicesController;
@@ -27,6 +28,15 @@ Route::get('/', function () {
 Route::get('/home',[HomeController::class, 'index'])->name('home');
 
 Route::get('admin', [AdminController::class, 'index'])->name('admin');
+
+// header
+Route::get('headers', [HeaderController::class, 'getHeaders'])->name('headers');
+Route::get('new_headerform', [HeaderController::class, 'newHeaderForm'])->name('new_headerform');
+Route::post('new_header', [HeaderController::class, 'newHeader'])->name('new_header');
+Route::get('edit_headerform/{id}', [HeaderController::class, 'editHeaderForm'])->name('edit_headerform');
+Route::put('edit_header/{id}', [HeaderController::class, 'editHeader'])->name('edit_header');
+
+
 
 // services
 Route::get('services', [ServicesController::class, 'index'])->name('services');

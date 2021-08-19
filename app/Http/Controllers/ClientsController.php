@@ -22,7 +22,7 @@ class ClientsController extends Controller
     {
         $this -> validate($request, [
             'name' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg|max:10092',
+            'image' => 'required|mimes:jpg,png,jpeg|max:10092', 
             'facebook' => 'required|url',
             'twitter' => 'required|url',
             'instagram' => 'required|url',
