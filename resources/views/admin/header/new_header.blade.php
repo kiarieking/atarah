@@ -11,28 +11,32 @@
                     
                     <p class="email">
                       <!-- <p class="text">background image</p> -->
-                      <input type="file" name="background_img" class="@error('icon') is-invalid  @enderror feedback-input" id="image" 
+                      <input type="file" name="background_img" class="@error('background_img') input-focus is-invalid  @enderror feedback-input" id="image" 
                       placeholder="choose an image" />
-                      
+                      @error('background_img')
+                        <span class="invalid-feedback">{{$message}}</span>
+                      @enderror
                     </p>
 
                     <p class="email">
-                      <input type="file" name="logo_img" class="@error('icon') is-invalid  @enderror feedback-input" id="image" 
+                      <input type="file" name="logo_img" class="@error('logo_img') input-focus is-invalid  @enderror feedback-input" id="image" 
                       placeholder="choose an image" />
-                      
+                      @error('background_img')
+                        <span class="invalid-feedback">{{$message}}</span>
+                      @enderror
                     </p>
                     
                     <p class="name">
-                      <input name="big_heading" type="text" class="@error('name') is-invalid  @enderror feedback-input" 
+                      <input name="big_heading" type="text" class="@error('big_heading') input-focus is-invalid  @enderror feedback-input" 
                       placeholder="big heading" id="big_heading" />
-                      @error('title')
+                      @error('big_heading')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>
                     <p class="name">
-                      <input name="small_heading" type="text" class="@error('name') is-invalid  @enderror feedback-input" 
+                      <input name="small_heading" type="text" class="@error('small_heading') input-focus is-invalid  @enderror feedback-input" 
                       placeholder="small heading" id="small_heading" />
-                      @error('title')
+                      @error('small_heading')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>

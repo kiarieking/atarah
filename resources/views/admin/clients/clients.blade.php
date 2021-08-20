@@ -24,11 +24,9 @@
 
       <th><a href="{{route('edit_clientform',$client->id)}}" ><button class="btn-trans" id="btn_edit">Edit</button></a></th>
       <th>
-        <form action="{{route('delete_client',$client->id)}}" method="POST" >
-          @csrf
-          @method('delete')
-          <button class="btn-white" id="btn_delete">Delete</button>
-        </form>
+      <a href="#popupClient"><button class="btn-white" id="btn_delete">Delete</button></a>
+        
+        @include('admin.clients.confirm_delete')
       </th>
     </tr>
     @endforeach

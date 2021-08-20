@@ -10,23 +10,25 @@
                     @csrf
                     @method('put')
                     <p class="name">
-                      <input name="name" type="text" value = "{{$testimony->name}}"class="@error('name') is-invalid  @enderror feedback-input" 
+                      <input name="name" type="text" value = "{{$testimony->name}}"class="@error('name') input-focus is-invalid  @enderror feedback-input" 
                       placeholder="name" id="name" />
-                      @error('title')
+                      @error('name')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>
                     
                     <p class="email">
-                      <input type="file" name="image" value="{{$testimony->image}}" class="@error('icon') is-invalid  @enderror feedback-input" id="image" 
+                      <input type="file" name="image" value="{{$testimony->image}}" class="@error('image') input-focus is-invalid  @enderror feedback-input" id="image" 
                       placeholder="choose an image" />
-                      
+                      @error('image')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                      @enderror
                     </p>
                     
                     <p class="text">
-                        <textarea name="testimony" class="validate[required,length[6,300]] feedback-input" id="testimony" 
+                        <textarea name="testimony" class="@error('testimony') input-focus is-invalid  @enderror feedback-input" id="testimony" 
                         placeholder="testimony">{{$testimony->testimony}}</textarea>
-                        @error('description')
+                        @error('testimony')
                           <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                       </p>

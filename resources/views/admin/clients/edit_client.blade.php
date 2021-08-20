@@ -10,37 +10,39 @@
                     @csrf
                     @method('put')
                     <p class="name">
-                      <input name="name" type="text" value="{{$client->name}}" class="@error('name') is-invalid  @enderror feedback-input" 
+                      <input name="name" type="text" value="{{$client->name}}" class="@error('name') input-focus is-invalid  @enderror feedback-input" 
                       placeholder="name" id="name" />
-                      @error('title')
+                      @error('name')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>
                     
                     <p class="email">
-                      <input type="file" name="image" value="{{$client->image}}" class="@error('icon') is-invalid  @enderror feedback-input" id="image" 
+                      <input type="file" name="image" value="{{$client->image}}" class="@error('image') input-focus is-invalid  @enderror feedback-input" id="image" 
                       placeholder="choose an image" />
-                      
+                      @error('name')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                      @enderror
                     </p>
                     
                     <p class="name">
-                      <input name="facebook" type="text" value="{{$client->facebook}}" class="@error('name') is-invalid  @enderror feedback-input" 
+                      <input name="facebook" type="text" value="{{$client->facebook}}" class="@error('facebook') input-focus is-invalid  @enderror feedback-input" 
                       placeholder="facebook" id="facebook" />
-                      @error('title')
+                      @error('facebook')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>
                     <p class="name">
-                      <input name="twitter" type="text" value="{{$client->twitter}}" class="@error('name') is-invalid  @enderror feedback-input" 
+                      <input name="twitter" type="text" value="{{$client->twitter}}" class="@error('twitter') input-focus is-invalid  @enderror feedback-input" 
                       placeholder="twitter" id="twitter" />
-                      @error('title')
+                      @error('twitter')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>
                     <p class="name">
-                      <input name="instagram" type="text" value="{{$client->instagram}}" class="@error('name') is-invalid  @enderror feedback-input" 
+                      <input name="instagram" type="text" value="{{$client->instagram}}" class="@error('instagram') input-focus is-invalid  @enderror feedback-input" 
                       placeholder="instagram" id="instagram" />
-                      @error('title')
+                      @error('instagram')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>

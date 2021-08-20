@@ -17,14 +17,21 @@
     <tr>
       <td>{{$service->title}}</td>
       <td>{{$service->icon}}</td>
-      <td>{{$service->description}}</td> 
+      <td>
+        @if(strlen($service->description)>50)
+        {{substr($service->description,0,50)}}
+        <span class="read-more-show hide_content">More<i class="fa fa-angle-down"></i></span>
+        <span class="read-more-content"> {{substr($service->description,100,strlen($service->description))}} 
+        <span class="read-more-hide hide_content">Less <i class="fa fa-angle-up"></i></span> </span>
+        @else
+            {{$service->description}}
+            @endif
+      </td> 
       <th><a href="{{route('edit_service',$service->id)}}" ><button class="btn-trans" id="btn_edit">Edit</button></a></th>
       <th>
-        <form action="{{route('delete_service',$service->id)}}" method="POST">
-          @csrf
-          @method('delete')
-          <button class="btn-white" id="btn_delete">Delete</button>
-        </form>
+      <a href="#popupService"><button class="btn-white" id="btn_delete">Delete</button></a>
+        
+        @include('admin.services.confirm_delete')
       </th>
     </tr>
     @endforeach

@@ -10,13 +10,19 @@
                     @csrf
                     @method('put')
                     <p class="name">
-                      <input name="title" type="text" value="{{$service->title}}" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" 
+                      <input name="title" type="text" value="{{$service->title}}" class="@error('title') input-focus is-invalid @enderror  feedback-input" 
                       placeholder="title" id="name" />
+                      @error('title')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                      @enderror
                     </p>
                     
                     <p class="email">
-                      <input list="icon" name="icon" value="{{$service->icon}}" class="validate[required,custom[email]] feedback-input" id="email" 
+                      <input list="icon" name="icon" value="{{$service->icon}}" class="@error('icon') input-focus is-invalid @enderror feedback-input" id="email" 
                       placeholder="icon" />
+                      @error('icon')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                      @enderror
                       <datalist id="icon">
                         <option value="fas fa-address-book">
                         <option value="fas fa-users">
@@ -27,8 +33,11 @@
                     </p>
                     
                     <p class="text">
-                        <textarea name="description" class="validate[required,length[6,300]] feedback-input" id="comment" 
+                        <textarea name="description" class="@error('description') input-focus is-invalid @enderror feedback-input" id="comment" 
                         placeholder="description">{{$service->description}}</textarea>
+                        @error('description')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                       </p>
                    
                     

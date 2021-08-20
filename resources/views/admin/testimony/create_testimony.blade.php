@@ -8,24 +8,27 @@
                     <h2 class="mb-3 form-head">Create a new Testimony</h2>
                   <form class="form" id="form1" action="{{route('new_testimony')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+
                     <p class="name">
-                      <input name="name" type="text" class="@error('name') is-invalid  @enderror feedback-input" 
-                      placeholder="name" id="name" />
+                      <input name="name" type="text" class="@error('name') input-focus is-invalid  @enderror feedback-input" 
+                      placeholder="name" id="name" value="{{old('name')}}"/>
                       @error('title')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>
                     
                     <p class="email">
-                      <input type="file" name="image" class="@error('icon') is-invalid  @enderror feedback-input" id="image" 
-                      placeholder="choose an image" />
-                      
+                      <input type="file" name="image" class="@error('image') input-focus is-invalid  @enderror feedback-input" id="image" 
+                      placeholder="choose an image" value="{{old('image')}}"/>
+                      @error('image')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </p>
                     
                     <p class="text">
-                        <textarea name="testimony" class="validate[required,length[6,300]] feedback-input" id="testimony" 
-                        placeholder="testimony"></textarea>
-                        @error('description')
+                        <textarea name="testimony" class="@error('testimony') input-focus is-invalid  @enderror feedback-input" id="testimony" 
+                        placeholder="testimony">{{old('testimony')}}</textarea>
+                        @error('testimony')
                           <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                       </p>

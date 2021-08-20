@@ -9,16 +9,16 @@
                   <form class="form" id="form1" action="{{route('new_service')}}" method="POST">
                     @csrf
                     <p class="name">
-                      <input name="title" type="text" class="@error('title') is-invalid  @enderror feedback-input" 
-                      placeholder="title" id="name" />
+                      <input name="title" type="text" class="@error('title') input-focus is-invalid  @enderror feedback-input" 
+                      placeholder="title" value="{{old('title')}}" id="name" />
                       @error('title')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>
                     
                     <p class="email">
-                      <input list="icon" name="icon" class="@error('icon') is-invalid  @enderror feedback-input" id="email" 
-                      placeholder="icon" />
+                      <input list="icon" name="icon" class="@error('icon') input-focus is-invalid  @enderror feedback-input" id="email" 
+                      placeholder="icon" value="{{old('icon')}}" />
                       @error('icon')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
@@ -32,10 +32,10 @@
                     </p>
                     
                     <p class="text">
-                        <textarea name="description" class="validate[required,length[6,300]] feedback-input" id="comment" 
-                        placeholder="description"></textarea>
+                        <textarea name="description" class="@error('icon') input-focus is-invalid  @enderror feedback-input" id="comment" 
+                        placeholder="description">{{old('description')}}</textarea>
                         @error('description')
-                          <span class="invalid-feedback">{{ $message }}</span>
+                          <span class=" invalid-feedback">{{ $message }}</span>
                         @enderror
                       </p>
                     <div class="submit">

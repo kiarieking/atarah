@@ -4,6 +4,7 @@
 <table class="container">
   <thead>
     <tr>
+      <th>#</th>
       <th><h1>Name</h1></th>
       <th><h1>testimony</h1></th>
       <th><h1>image</h1></th>
@@ -13,18 +14,26 @@
     </tr>
   </thead>
   <tbody>
-      @foreach ($testimonies as $testimony)
+      @foreach ($testimonies as $count => $testimony)
     <tr>
+      <td>{{++$count}}</td>
       <td>{{$testimony->name}}</td>
-      <td>{{$testimony->testimony}}</td>
+      <td>
+      @if(strlen($testimony->testimony)>50)
+        {{substr($testimony->testimony,0,50)}}
+        <span class="read-more-show hide_content">More<i class="fa fa-angle-down"></i></span>
+        <span class="read-more-content"> {{substr($testimony->testimony,50,strlen($testimony->testimony))}} 
+        <span class="read-more-hide hide_content">Less <i class="fa fa-angle-up"></i></span> </span>
+        @else
+            {{$testimony->testimony}}
+            @endif
+      </td>
       <td>{{$testimony->image}}</td> 
       <th><a href="{{route('edit_testimonyform',$testimony->id)}}" ><button class="btn-trans" id="btn_edit">Edit</button></a></th>
       <th>
-        <form action="{{route('delete_testimony',$testimony->id)}}" method="POST" >
-          @csrf
-          @method('delete')
-          <button class="btn-white" id="btn_delete">Delete</button>
-        </form>
+      <a href="#popupTestimony"><button class="btn-white" id="btn_delete">Delete</button></a>
+        
+        @include('admin.testimony.confirm_delete')
       </th>
     </tr>
     

@@ -22,11 +22,9 @@
       <td>{{$message->msg}}</td> 
       <th><a href="{{route('reply_form',$message->id)}}" ><button class="btn-trans" id="btn_edit">respond</button></a></th>
       <th>
-        <form action="{{route('delete_message',$message->id)}}" method="POST">
-          @csrf
-          @method('delete')
-          <button class="btn-white" id="btn_delete">delete</button>
-        </form>
+      <a href="#popupContact"><button class="btn-white" id="btn_delete">Delete</button></a>
+        
+        @include('admin.contact.confirm_delete')
       </th>
     </tr>
     @endforeach

@@ -44,6 +44,13 @@ class ServicesController extends Controller
 
     public function saveEditService(Request $request, $id)
     {
+        $this->validate($request, [
+            'title'=>'required|min:12',
+            'icon' => 'required|min:10',
+            'description' =>'required|min:50',
+
+        ]);
+        
         $service = Services::findOrFail($id);
 
         $service -> title = $request -> title;

@@ -9,13 +9,19 @@
                   <form class="form" id="form1" action="{{route('new_model')}}" method="POST">
                     @csrf
                     <p class="name">
-                      <input name="title" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" 
-                      placeholder="title" id="name" />
+                      <input name="title" type="text" class="@error('title') input-focus is-invalid  @enderror feedback-input" 
+                      placeholder="title" id="name" value="{{old('title')}}" />
+                      @error('title')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                      @enderror
                     </p>
                     
                     <p class="email">
-                      <input list="icon" name="icon" class="validate[required,custom[email]] feedback-input" id="email" 
-                      placeholder="icon" />
+                      <input list="icon" name="icon" class="@error('icon') input-focus is-invalid  @enderror feedback-input" id="email" 
+                      placeholder="icon" value="{{old('icon')}}" />
+                      @error('icon')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                      @enderror
                       <datalist id="icon">
                         <option value="fas fa-address-book">
                         <option value="fas fa-users">
@@ -26,8 +32,11 @@
                     </p>
                     
                     <p class="text">
-                        <textarea name="description" class="validate[required,length[6,300]] feedback-input" id="comment" 
-                        placeholder="description"></textarea>
+                        <textarea name="description" class="@error('description') input-focus is-invalid  @enderror feedback-input" id="comment" 
+                        placeholder="description"> {{old('description')}}</textarea>
+                        @error('description')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                      @enderror
                       </p>
                    
                     

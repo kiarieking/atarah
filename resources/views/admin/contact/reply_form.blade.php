@@ -1,25 +1,50 @@
 @extends('admin.index')
 @section('content')
-<div class="contact-left" id="reply-form">
-    <h2>Respond to client</h2>
+    
+    <div class="container">
     @if (Session::has('flash_message'))
         <p class="success">your message has been succesfuly sent.</p>
-    @endif    
-    <form method="post" action="{{route('admin_response')}}">
-        @csrf
-        <input type="text" name="name" value="{{$message->name}}" class="form-control" placeholder="Name">
-        @if ($errors->has('name'))
-            <small class="form-text invalid-feedback text-danger">{{$errors->first('name')}}</small></br>
-        @endif    
-        <input type="text" name="email" value="{{$message->email}}" class="form-control " placeholder="Email">
-        @if ($errors->has('email'))
-            <small class="form-text invalid-feedback text-danger">{{$errors->first('email')}}</small></br>
-        @endif 
-        <textarea name="message" placeholder="message" rows="6" class="form-control"></textarea>
-        @if ($errors->has('message'))
-            <small class="form-text invalid-feedback text-danger">{{$errors->first('message')}}</small></br>
-        @endif 
-        <button type="submit" class="submit-btn">Send now</button>
-    </form>
+    @endif 
+    <div class="row">
+        <div class="col-md-6">
+            <div id="form-main">
+                <div id="form-div">
+                    <h2 class="mb-3 form-head">Reply to client</h2>   
+    <form class="form" id="form1" action="{{route('admin_response')}}" method="POST">
+                    @csrf
+                    <p class="name">
+                      <input name="name" type="text" class="@error('name') input-focus is-invalid  @enderror feedback-input" 
+                      placeholder="name" value="{{$message->name}}" id="name" />
+                      @error('name')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                      @enderror
+                    </p>
+                    
+                    <p class="email">
+                    <input name="email" type="text" class="@error('email') input-focus is-invalid  @enderror feedback-input" 
+                      placeholder="email" value="{{$message->email}}" id="email" />
+                      @error('title')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                      @enderror
+                     
+                    </p>
+                    
+                    <p class="text">
+                        <textarea name="message" class="@error('message') input-focus is-invalid  @enderror feedback-input" id="comment" 
+                        placeholder="message">{{old('description')}}</textarea>
+                        @error('message')
+                          <span class=" invalid-feedback">{{ $message }}</span>
+                        @enderror
+                      </p>
+                    <div class="submit">
+                      <input type="submit" value="Upload" id="button-blue"/>
+                      <div class="ease"></div>
+                    </div>
+                  </form>
+</div>
+</div>
+</div>
+</div>
+
 </div>
 @endsection

@@ -48,7 +48,7 @@ class ModelsController extends Controller
         $this->validate($request, [
             'header' => 'required',
             'icon' => 'required',
-            'descrition' => 'required'
+            'description' => 'required'
         ]);
 
         $model = Models::findOrFail($id);

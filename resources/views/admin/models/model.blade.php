@@ -17,14 +17,21 @@
     <tr>
       <td>{{$model->header}}</td>
       <td>{{$model->icon}}</td>
-      <td>{{$model->description}}</td> 
+      <td>  @if(strlen($model->description)>50)
+        {{substr($model->description,0,50)}}
+        <span class="read-more-show hide_content">More<i class="fa fa-angle-down"></i></span>
+        <span class="read-more-content"> {{substr($model->description,50,strlen($model->description))}} 
+        <span class="read-more-hide hide_content">Less <i class="fa fa-angle-up"></i></span> </span>
+        @else
+            {{$model->description}}
+            @endif</td> 
       <th><a href="{{route('edit_model_form',$model->id)}}" ><button class="btn-trans" id="btn_edit">Edit</button></a></th>
       <th>
-        <form action="{{route('delete_model',$model->id)}}" method="POST">
-          @csrf
-          @method('delete')
-          <button class="btn-white" id="btn_delete">Delete</button>
-        </form>
+       
+          
+        <a href="#popupModel"><button class="btn-white" id="btn_delete">Delete</button></a>
+        
+        @include('admin.models.confirm_delete')
       </th>
     </tr>
     @endforeach

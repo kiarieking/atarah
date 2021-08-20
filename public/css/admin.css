@@ -430,8 +430,8 @@ input:focus, textarea:focus {
    font-family: 'Open Sans', sans-serif;
    font-weight: 300;
    line-height: 1.42em;
-   color:#A7A1AE;
-   background-color:#637bb3;
+   color:#e7dff0;
+   background-color:#797ab9;
  }
  
  h1 {
@@ -439,7 +439,7 @@ input:focus, textarea:focus {
    font-weight: 300;
    line-height:1em;
    text-align: center;
-   color: #4DC3FA;
+   color: #ebf1f3;
  }
  
  h2 {
@@ -466,7 +466,7 @@ input:focus, textarea:focus {
      font-weight: bold;
      font-size: 1em;
    text-align: left;
-   color: #185875;
+   color: #c4c8e6;
  }
  
  .container td {
@@ -512,7 +512,7 @@ input:focus, textarea:focus {
 
  
  .container td:first-child {
-    color: grey; 
+    color: rgb(233, 220, 220); 
   }
  
  .container tr:hover {
@@ -523,12 +523,12 @@ input:focus, textarea:focus {
  }
  
  .container td:hover {
-   background-color: #041399;
+   background-color: #555fb9;
    color: #f8f8fc;
    font-weight: bold;
    
-   box-shadow: #1f2b61 -1px 1px, #1f2b61 -2px 2px, #1f2b61 -3px 3px, #1f2b61 -4px 4px, #1f2b61 -5px 5px, #1f2b61 -6px 6px;
-   transform: translate3d(6px, -6px, 0);
+   box-shadow: #1f2b61 -1px 1px, #1f2b61 -1px 1px, #1f2b61 -1px 1px, #1f2b61 -1px 1px, #1f2b61 -1px 1px, #1f2b61 -1px 1px;
+   transform: translate3d(2px, -2px, 0);
    
    transition-delay: 0s;
      transition-duration: 0.4s;
@@ -557,6 +557,23 @@ input:focus, textarea:focus {
   margin-left: 100px;
 }
 
+.read-more-show{
+  cursor:pointer;
+  color: #041399;
+}
+.read-more-hide{
+  cursor:pointer;
+  color: #041399;
+}
+
+.hide_content{
+  display: none;
+}
+
+.input-focus{
+  border:solid 1px red;
+  transition: ease-in-out, border 0.95s ease-in-out;
+}
 
  @media (max-width: 800px) {
  .container td:nth-child(4),

@@ -2,7 +2,7 @@
 # {{$maildata['title']}}
 
 Thank you for reaching out to Atarah solutions. Your query is being handled.
-!['atarah']({{ asset('img/logo.png') }})
+<img src="https://atarahsolutions.co.ke/img/int/name.jpg" alt="image here">
 
 @component('mail::button', ['url' => $maildata['url']])
 Back to atarah

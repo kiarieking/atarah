@@ -9,37 +9,39 @@
                   <form class="form" id="form1" action="{{route('new_client')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <p class="name">
-                      <input name="name" type="text" class="@error('name') is-invalid  @enderror feedback-input" 
-                      placeholder="name" id="name" />
-                      @error('title')
+                      <input name="name" type="text" class="@error('name') input-focus is-invalid  @enderror feedback-input" 
+                      placeholder="name" id="name" value="{{old('name')}}"/>
+                      @error('name')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>
                     
                     <p class="email">
-                      <input type="file" name="image" class="@error('icon') is-invalid  @enderror feedback-input" id="image" 
-                      placeholder="choose an image" />
-                      
+                      <input type="file" name="image" class="@error('image') input-focus is-invalid  @enderror feedback-input" id="image" 
+                      placeholder="choose an image" value="{{old('image')}}"/>
+                      @error('image')
+                          <span class="invalid-feedback">{{ $message }}</span>
+                      @enderror
                     </p>
                     
                     <p class="name">
-                      <input name="facebook" type="text" class="@error('name') is-invalid  @enderror feedback-input" 
-                      placeholder="facebook" id="facebook" />
-                      @error('title')
+                      <input name="facebook" type="text" class="@error('facebook') input-focus is-invalid  @enderror feedback-input" 
+                      placeholder="facebook" id="facebook" value="{{old('facebook')}}"/>
+                      @error('facebook')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>
                     <p class="name">
-                      <input name="twitter" type="text" class="@error('name') is-invalid  @enderror feedback-input" 
-                      placeholder="twitter" id="twitter" />
-                      @error('title')
+                      <input name="twitter" type="text" class="@error('twitter') input-focus is-invalid  @enderror feedback-input" 
+                      placeholder="twitter" id="twitter" value="{{old('twitter')}}"/>
+                      @error('twitter')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>
                     <p class="name">
-                      <input name="instagram" type="text" class="@error('name') is-invalid  @enderror feedback-input" 
-                      placeholder="instagram" id="instagram" />
-                      @error('title')
+                      <input name="instagram" type="text" class="@error('instagram') input-focus is-invalid  @enderror feedback-input" 
+                      placeholder="instagram" id="instagram" value="{{old('instagram')}}" />
+                      @error('instagram')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
                     </p>

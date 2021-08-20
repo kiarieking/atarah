@@ -9,14 +9,14 @@
     <script src="https://kit.fontawesome.com/fa6dbab9b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="popupModel" class="overlay">
+    <div id="popupContact" class="overlay">
         <div class="popup">
             <h2>Confirm Delete</h2>
             <a class="close" href="#">&times;</a>
             <div class="content">
-                Are you sure you want to delete this model?
+                Are you sure you want to delete this message?
             </div>
-            <form action="{{route('delete_model',$model->id)}}" method="POST">
+            <form action="{{route('delete_message',$message->id)}}" method="POST">
                 @csrf
                 @method('delete')
                 <button class="button" >Delete</button>

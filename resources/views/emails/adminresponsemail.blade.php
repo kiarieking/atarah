@@ -7,7 +7,7 @@ Hello <b>{{$maildata['name']}}</b>,<br>
 
 
 @component('mail::button', ['url' => $maildata['url']])
-Button Text
+Go to Atarah Solutions
 @endcomponent
 
 With Regards,<br>
