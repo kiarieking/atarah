@@ -10,7 +10,7 @@ class ModelsController extends Controller
 {
     public function index()
     {
-        $models = Models::all();
+        $models = Models::skip(0)->take(4)->get();
         return view('admin.models.model', compact('models'));
     }
 

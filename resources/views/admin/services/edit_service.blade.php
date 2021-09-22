@@ -5,6 +5,7 @@
         <div class="col-md-6">
             <div id="form-main">
                 <div id="form-div">
+               <a href="{{route('services')}}"><i class="fas fa-hand-point-left"></i></a>
                     <h2 class="form-head">Create a new service</h2>
                   <form class="form" id="form1" action="{{route('save_edit_service', $service->id)}}" method="POST">
                     @csrf
@@ -33,7 +34,7 @@
                     </p>
                     
                     <p class="text">
-                        <textarea name="description" class="@error('description') input-focus is-invalid @enderror feedback-input" id="comment" 
+                        <textarea name="description" class="@error('description') input-focus is-invalid @enderror feedback-input" id="description" 
                         placeholder="description">{{$service->description}}</textarea>
                         @error('description')
                           <span class="invalid-feedback">{{ $message }}</span>

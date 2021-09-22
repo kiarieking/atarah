@@ -39,7 +39,7 @@ class ContactFormController extends Controller
 
         $message->name = $request -> name;
         $message->email = $request -> email;
-        $message->msg = $request -> message;
+        $message->msg = strip_tags($request -> message);
 
         $message -> save();
         
@@ -70,7 +70,7 @@ class ContactFormController extends Controller
         ]);
 
         $email = $request-> email;
-        $message = $request->message;
+        $message = strip_tags($request->message);
         
         $maildata = [
             'title' => 'Response to your query',

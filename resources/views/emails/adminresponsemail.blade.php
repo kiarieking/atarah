@@ -13,3 +13,5 @@ Go to Atarah Solutions
 With Regards,<br>
 <b>Atarah Solutions.<b>
 @endcomponent
+<img src="https://atarahsolutions.co.ke/img/int/name.jpg" alt="image here" id="image-logo">
+

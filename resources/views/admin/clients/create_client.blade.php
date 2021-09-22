@@ -5,6 +5,7 @@
         <div class="col-md-6">
             <div id="form-main">
                 <div id="form-div">
+                    <a href="{{route('clients')}}"><i class="fas fa-hand-point-left"></i></a>
                     <h2 class="mb-3 form-head">Add a new Client</h2>
                   <form class="form" id="form1" action="{{route('new_client')}}" method="POST" enctype="multipart/form-data">
                     @csrf

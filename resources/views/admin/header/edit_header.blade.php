@@ -5,6 +5,8 @@
         <div class="col-md-6">
             <div id="form-main">
                 <div id="form-div">
+                <a href="{{route('headers')}}"><i class="fas fa-hand-point-left"></i></a>
+
                     <h2 class="mb-3 form-head">Edit Header {{$header->id}}</h2>
                   <form class="form" id="form1" action="{{route('edit_header',$header->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf

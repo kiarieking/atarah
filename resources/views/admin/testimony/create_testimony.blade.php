@@ -5,6 +5,8 @@
         <div class="col-md-6">
             <div id="form-main">
                 <div id="form-div">
+               <a href="{{route('testimonies')}}"><i class="fas fa-hand-point-left"></i></a>
+
                     <h2 class="mb-3 form-head">Create a new Testimony</h2>
                   <form class="form" id="form1" action="{{route('new_testimony')}}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -26,7 +28,7 @@
                     </p>
                     
                     <p class="text">
-                        <textarea name="testimony" class="@error('testimony') input-focus is-invalid  @enderror feedback-input" id="testimony" 
+                        <textarea name="testimony" class="@error('testimony') input-focus is-invalid  @enderror feedback-input" id="description" 
                         placeholder="testimony">{{old('testimony')}}</textarea>
                         @error('testimony')
                           <span class="invalid-feedback">{{ $message }}</span>

@@ -9,7 +9,7 @@ class ServicesController extends Controller
 {
     public function index()
     {
-        $services = Services::skip(0)->take(3)->get();
+        $services = Services::skip(0)->take(4)->get();
         return view('admin.services.services', compact('services'));
     }
 
@@ -30,7 +30,7 @@ class ServicesController extends Controller
 
         $service -> icon = $request -> icon;
         $service -> title = $request -> title;
-        $service -> description = $request -> description;
+        $service -> description =strip_tags($request -> description);
 
         $service->save();
         return redirect()->route('services');
@@ -55,7 +55,7 @@ class ServicesController extends Controller
 
         $service -> title = $request -> title;
         $service -> icon = $request -> icon;
-        $service -> description = $request -> description;
+        $service -> description = strip_tags($request -> description);
 
         $service -> save();
         return redirect()->route('services');
@@ -63,8 +63,8 @@ class ServicesController extends Controller
 
     public function deleteService($id)
     {
-        $service = Services::findOrFail($id);
-        $service -> delete();
-        return redirect()->route('services');
+      $service = Services::findOrFail($id);
+      $service->delete();
+      return redirect()->route('services');
     }
 }

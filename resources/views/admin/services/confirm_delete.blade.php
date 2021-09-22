@@ -16,11 +16,18 @@
             <div class="content">
                 Are you sure you want to delete this service?
             </div>
-            <form action="{{route('delete_service',$service->id)}}" method="POST">
-                @csrf
-                @method('delete')
-                <button class="button" >Delete</button>
-              </form>
+            <div class="del-dialogue-btn">
+                
+                <button class="button" id="discard" onclick="hide()" >Discard</button>
+                
+               
+                <form action="{{route('delete_service',$service->id)}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="button" >Delete</button>
+                </form>
+                
+              </div>
         </div>
     </div>
 </body>

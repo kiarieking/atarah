@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 :root{
     --mount-meadow:#041399;
     --white-smoke:#f0f0f0;
@@ -119,6 +120,7 @@ body{
     opacity: 0;
     pointer-events: none;
     display: block;
+    color: red;
 }
 .sidebar.active ul li .tooltip{
     display: none;
@@ -246,7 +248,8 @@ input .is-invalid{
   font-weight: bolder;
 }
 .home_content{
-  position: absolute;
+  align-items: center;
+  /* position: absolute; */
   margin: 2rem;
   height: 100%;
   width: calc(100%-78px);
@@ -292,6 +295,11 @@ input .is-invalid{
     color: var(--mount-meadow);
 }
 
+.fa-hand-point-left{
+  color:black;
+  
+}
+
 #form-main{
   width:100%;
   float:right;
@@ -305,7 +313,7 @@ input .is-invalid{
   padding-right:35px;
   padding-top:35px;
   padding-bottom:35px;
-  width: 450px;
+  width: 750px;
   float: right;
   left: 20%;
   position: absolute;
@@ -376,9 +384,9 @@ input:focus, textarea:focus {
 }
 
 #button-blue:hover{
-  background-color: rgb(199, 42, 42);
+  background-color: red;
   color: #000;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
   
 .submit:hover {
@@ -398,7 +406,7 @@ input:focus, textarea:focus {
 
 .submit:hover .ease{
   width:100%;
-  background-color:rgb(219, 21, 21);
+  /* background-color:rgb(219, 21, 21); */
 }
 
 @media only screen and (max-width: 580px) {
@@ -423,7 +431,7 @@ input:focus, textarea:focus {
 
  */
 
-
+/* table */
  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
  
  body {
@@ -434,6 +442,10 @@ input:focus, textarea:focus {
    background-color:#797ab9;
  }
  
+.table-display{
+  margin:10%;
+}
+
  h1 {
    font-size:3em; 
    font-weight: 300;
@@ -462,22 +474,27 @@ input:focus, textarea:focus {
  .blue { color: #185875; }
  .yellow { color: #FFF842; }
  
- .container th h1 {
+ .table-container th h1 {
      font-weight: bold;
      font-size: 1em;
    text-align: left;
    color: #c4c8e6;
  }
  
- .container td {
+ .table-container td {
      font-weight: normal;
      font-size: 1em;
    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
       -moz-box-shadow: 0 2px 2px -2px #0E1119;
            box-shadow: 0 2px 2px -2px #0E1119;
  }
+
+ .action-header{
+   align-items: center;
+ }
  
- .container {
+ .table-container {
+   align-items: center;
      text-align: center;
      overflow: hidden;
      width: 100%;
@@ -485,44 +502,46 @@ input:focus, textarea:focus {
    display: table;
    padding: 0 0 8em 0;
  }
+
+
  
- .container td, .container th {
+ .table-container td, .table-container th {
      padding-bottom: 2%;
      padding-top: 2%;
    padding-left:2%;  
  }
  
  /* Background-color of the odd rows */
- .container tr:nth-child(odd) {
+ .table-container tr:nth-child(odd) {
      background-color: #323C50;
  }
  
  /* Background-color of the even rows */
- .container tr:nth-child(even) {
+ .table-container tr:nth-child(even) {
      background-color: #2C3446;
  }
  
- .container th {
+ .table-container th {
      background-color: #1F2739;
  }
 
- .container td{
+ .table-container td{
    width: 250px;
  }
 
  
- .container td:first-child {
+ .table-container td:first-child {
     color: rgb(233, 220, 220); 
   }
  
- .container tr:hover {
+ .table-container tr:hover {
     background-color: #464A52;
  -webkit-box-shadow: 0 6px 6px -6px #0E1119;
       -moz-box-shadow: 0 6px 6px -6px #0E1119;
            box-shadow: 0 6px 6px -6px #0E1119;
  }
  
- .container td:hover {
+ .table-container td:hover {
    background-color: #555fb9;
    color: #f8f8fc;
    font-weight: bold;
@@ -541,17 +560,17 @@ input:focus, textarea:focus {
    border-radius: 15px;
    margin: 15px;
    margin-right: 25px;
+   
+
    padding: 10px;
    border: white solid;
  }
 
- #btn_delete{
-  border-radius: 15px;
-  margin: 15px;
-  margin-right: 25px;
-  padding: 10px;
-  color: red;
-}
+ .model-btn{
+   margin-left: 10%;
+ }
+
+
 
 #reply-form{
   margin-left: 100px;
@@ -576,10 +595,46 @@ input:focus, textarea:focus {
 }
 
  @media (max-width: 800px) {
- .container td:nth-child(4),
- .container th:nth-child(4) { display: none; }
+ .table-containertd:nth-child(4),
+ .table-container th:nth-child(4) { display: none; }
+ }
+
+ /* confirm delete dialogue */
+ .del-dialogue-btn{
+   display: flex;
+   margin-left: 4rem;
+  grid-template-columns: 2, 1fr;
+ }
+
+ #btn_delete{
+  border-radius: 15px;
+  margin: 15px;
+  margin-right: 25px;
+  padding: 10px;
+  color: red;
+}
+
+.button{
+  margin: 1rem;
+  float: right;
+}
+ #discard{
+   border-color: blue;
+  background: #041399;
+  color: wheat;
  }
  
- 
- 
+ /* users */
+.user-container{
+  margin:5rem;
+} 
+
+.user-nav{
+  float: right;
+}
+
+.user-navlink{
+  padding:10px;
+  
+}
  

@@ -1,7 +1,8 @@
 @extends('admin.index')
 @section('content')
+<div class="table-display">
 <th><a href="{{route('new_headerform')}}" ><button class="btn-trans" id="btn_edit">Add new Header</button></a></th>
-<table class="container">
+<table class="table-container">
   <thead>
     <tr>
       <th><h1>Background Image</h1></th>
@@ -33,7 +34,6 @@
     @endforeach
     
   </tbody>
-
-
 </table>
+</div>
 @endsection

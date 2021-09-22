@@ -1,7 +1,8 @@
 @extends('admin.index')
 @section('content')
+<div class="table-display">
 <th><a href="{{route('add_newclientform')}}" ><button class="btn-trans" id="btn_edit">Add new Client</button></a></th>
-<table class="container">
+<table class="table-container">
   <thead>
     <tr>
       <th><h1>Name</h1></th>
@@ -32,7 +33,6 @@
     @endforeach
     
   </tbody>
-
-
 </table>
+</div>
 @endsection

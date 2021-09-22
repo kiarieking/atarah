@@ -1,9 +1,7 @@
 @extends('admin.index')
 @section('content')
-@if(Session::has('flash_message'))
-  <p class="success">Your email has been sent.</p>
-@endif  
-<table class="container">
+<div class="table-display"> 
+<table class="table-container">
   <thead>
     <tr>
       <th><h1>Name</h1></th>
@@ -30,8 +28,5 @@
     @endforeach
   </tbody>
 </table>
-
-
-
-
+</div>
 @endsection

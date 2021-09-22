@@ -10,11 +10,11 @@
             <div id="form-main">
                 <div id="form-div">
                     <h2 class="mb-3 form-head">Reply to client</h2>   
-    <form class="form" id="form1" action="{{route('admin_response')}}" method="POST">
+          <form class="form" id="form1" action="{{route('admin_response')}}" method="POST">
                     @csrf
                     <p class="name">
                       <input name="name" type="text" class="@error('name') input-focus is-invalid  @enderror feedback-input" 
-                      placeholder="name" value="{{$message->name}}" id="name" />
+                      placeholder="name" value="{{$message->name}}" id="name" readonly="readonly" />
                       @error('name')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
@@ -22,7 +22,7 @@
                     
                     <p class="email">
                     <input name="email" type="text" class="@error('email') input-focus is-invalid  @enderror feedback-input" 
-                      placeholder="email" value="{{$message->email}}" id="email" />
+                      placeholder="email" value="{{$message->email}}" id="email" readonly="readonly"/>
                       @error('title')
                           <span class="invalid-feedback">{{ $message }}</span>
                       @enderror
@@ -30,7 +30,7 @@
                     </p>
                     
                     <p class="text">
-                        <textarea name="message" class="@error('message') input-focus is-invalid  @enderror feedback-input" id="comment" 
+                        <textarea name="message" class="@error('message') input-focus is-invalid  @enderror feedback-input" id="description" 
                         placeholder="message">{{old('description')}}</textarea>
                         @error('message')
                           <span class=" invalid-feedback">{{ $message }}</span>

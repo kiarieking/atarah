@@ -1,7 +1,8 @@
 @extends('admin.index')
 @section('content')
+<div class="table-display">
 <th><a href="{{route('new_testimonyform')}}" ><button class="btn-trans" id="btn_edit">create new testimony</button></a></th>
-<table class="container">
+<table class="table-container">
   <thead>
     <tr>
       <th>#</th>
@@ -42,4 +43,5 @@
 
 
 </table>
+</div>
 @endsection

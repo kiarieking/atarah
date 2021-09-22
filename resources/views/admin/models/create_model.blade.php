@@ -5,6 +5,7 @@
         <div class="col-md-6">
             <div id="form-main">
                 <div id="form-div">
+               <a href="{{route('models')}}"><i class="fas fa-hand-point-left"></i></a>
                     <h2 class="mb-3 form-head">Add a Model</h2>
                   <form class="form" id="form1" action="{{route('new_model')}}" method="POST">
                     @csrf
@@ -32,7 +33,7 @@
                     </p>
                     
                     <p class="text">
-                        <textarea name="description" class="@error('description') input-focus is-invalid  @enderror feedback-input" id="comment" 
+                        <textarea name="description" class="@error('description') input-focus is-invalid  @enderror feedback-input" id="description" 
                         placeholder="description"> {{old('description')}}</textarea>
                         @error('description')
                           <span class="invalid-feedback">{{ $message }}</span>

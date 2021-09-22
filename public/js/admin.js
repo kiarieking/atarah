@@ -27,3 +27,22 @@ $('.read-more-hide').on('click', function(e) {
   p.prev('.read-more-show').removeClass('hide_content'); // Hide only the preceding "Read More"
   e.preventDefault();
 });
+
+
+tinymce.init({
+  selector: '#description',
+  plugins: "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template textcolor paste textcolor colorpicker",
+
+
+});
+
+
+function hide() {
+  $("#popupService").hide(); 
+}
+
+function show() {
+  $("#popupService").show(); 
+}
+
+

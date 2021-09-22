@@ -1,7 +1,8 @@
 @extends('admin.index')
 @section('content')
+<div class="table-display">
 <th><a href="{{route('new_serviceform')}}" ><button class="btn-trans" id="btn_edit">create new service</button></a></th>
-<table class="container">
+<table class="table-container">
   <thead>
     <tr>
       <th><h1>Service Title</h1></th>
@@ -29,16 +30,20 @@
       </td> 
       <th><a href="{{route('edit_service',$service->id)}}" ><button class="btn-trans" id="btn_edit">Edit</button></a></th>
       <th>
-      <a href="#popupService"><button class="btn-white" id="btn_delete">Delete</button></a>
+      <a href="#">
+        <button class="btn-white" id="btn_delete" onclick="confirm('Are you sure you want to delete {{ $service->title}} ?' ) ? document.getElementById('deleteService-{{$service->id}}').submit() : ''" >Delete</button>
+      </a>
+      <form style="display:none" action="{{route('delete_service',$service->id)}}" method="POST" id="deleteService-{{$service->id}}">
+          @csrf
+          @method('delete')
+          <button type="submit" class="button" >Delete</button>
+      </form>
         
-        @include('admin.services.confirm_delete')
+        <!-- @include('admin.services.confirm_delete') -->
       </th>
     </tr>
     @endforeach
   </tbody>
 </table>
- 
-
-
-
+</div>
 @endsection

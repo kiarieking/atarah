@@ -1,7 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\ModelsController;
@@ -27,7 +30,6 @@ Route::get('/', function () {
 
 Route::get('/home',[HomeController::class, 'index'])->name('home');
 
-Route::get('admin', [AdminController::class, 'index'])->name('admin');
 
 // header
 Route::get('headers', [HeaderController::class, 'getHeaders'])->name('headers');
@@ -76,3 +78,13 @@ Route::post('new_client', [ClientsController::class, 'newClient'])->name('new_cl
 Route::get('edit_clientform/{id}', [ClientsController::class, 'editClientForm'])->name('edit_clientform');
 Route::put('edit_client/{id}', [ClientsController::class, 'editClient'])->name('edit_client');
 Route::delete('delete_client/{id}', [ClientsController::class, 'deleteClient'])->name('delete_client');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
+    Route::get('admin', [AdminController::class, 'index'])->name('admin');
+    
+});

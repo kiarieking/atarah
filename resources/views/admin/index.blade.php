@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
      <!-- fonts css -->
      <link rel="stylesheet" href="{{asset('css/font.css')}}">
       <!-- normalize css -->
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/oj23wstjt67f00fy4k0rav8burok5ehq7v8n3x4eh9ki6ipr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <title>Atarah admin</title>
 </head>
 <body>
@@ -43,7 +45,7 @@
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('users.index')}}">
                     <i class='bx bxs-user' ></i>
                     <span class="links-name">User</span>
                 </a>
